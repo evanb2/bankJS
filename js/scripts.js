@@ -9,24 +9,25 @@ var BankAccount = {
 };
 
 $(document).ready(function() {
+    //create object outside submit functions for global scope
+    var newBankAccount = Object.create(BankAccount);
+
     $("form#signup").submit(function(event) {
         event.preventDefault();
 
         var initial = parseInt($("input#initial").val());
-        var newBankAccount = Object.create(BankAccount);
+        var name = $("input#name").val();
         newBankAccount.balance = initial;
 
         $("p#balance").text(newBankAccount.balance);
+        $("#show-account").show();
+        $("#show-account h3").text(name + "'s Account Balance");
     });
 
         $("form#transaction").submit(function(event) {
             event.preventDefault();
             var depositAmount = parseInt($("input#deposit").val());
             var withdrawAmount = parseInt($("input#withdraw").val());
-
-            var current = parseInt($("p#balance").text());
-            var newBankAccount = Object.create(BankAccount);
-            newBankAccount.balance = current;
             newBankAccount.deposit(depositAmount);
             newBankAccount.withdraw(withdrawAmount);
 

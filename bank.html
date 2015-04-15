@@ -16,24 +16,30 @@
                        <h3>Sign up For a bank account</h3>
                        <input id="name" name="name" type="text" placeholder="your name" required>
                        <input id="initial" name="initial" type="number" placeholder="initial deposit" required>
-                       <button type="submit">Create Bank Account</button>
+                       <br>
+                       <button type="submit" class="btn btn-primary">Create Bank Account</button>
                     </form>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class='form-group'>
-                    <h3>Deposit or Withdraw Money</h3>
                     <form id="transaction">
-                       <input id="deposit" name="deposit" type="number" value="0">
-                       <input id="withdraw" name="withdraw" type="number" value="0">
-                       <button type="submit">Submit</button>
+                        <h3>Deposit or Withdraw Money</h3>
+                        <label for="deposit">Deposit</label>
+                        <input id="deposit" name="deposit" type="number" value="0"><br>
+                        <label for="withdraw">Withdraw</label>
+                        <input id="withdraw" name="withdraw" type="number" value="0">
+                        <br>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="row">
-            <h3>Your account balance</h3>
-            <p id="balance"></p>
+            <div id="show-account">
+                <h3></h3>
+                <p id="balance"></p>
+            </div>
         </div>
     </div>
    </body>
